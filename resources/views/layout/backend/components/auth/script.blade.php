@@ -95,10 +95,10 @@
                     '<select class="form-control js-example-basic-single product_id select"name="product_id[]" id="product_id' + i + '"required>' +
                     '<option value="" selected hidden class="text-muted">Select Product</option></select>' +
                     '</td>' +
-                    '<td><input type="text" class="form-control width" id="width" name="width[]" value="" required /></td>' +
-                    '<td><input type="text" class="form-control height" id="height" name="height[]" value="" required /></td>' +
+                    '<td><input type="text" class="form-control width" id="width" name="width[]" value="1" required /></td>' +
+                    '<td><input type="text" class="form-control height" id="height" name="height[]" value="1" required /></td>' +
                     '<td><input type="text" class="form-control qty" id="qty" name="qty[]" value="" required /></td>' +
-                    '<td><input type="text" class="form-control areapersqft" id="areapersqft" name="areapersqft[]"  value="" readonly /></td>' +
+                    '<td><input type="text" class="form-control areapersqft" id="areapersqft" name="areapersqft[]"  value="1" readonly /></td>' +
                     '<td><input type="text" class="form-control rate" id="rate" name="rate[]"  value="" required /></td>' +
                     '<td><input type="text" class="form-control product_total" readonly id="product_total"style="background-color: #e9ecef;" name="product_total[]" placeholder="Total" /></td>' +
                     '<td><button class="btn btn-danger form-plus-btn remove-tr" type="button" id="" value="Add"><i class="fe fe-minus-circle"></i></button></td>' +
@@ -204,7 +204,7 @@
                     $('.overall').val(totalq_amount);
                 }
 
-                
+
 
 
                 var overall = $('.overall').val();
@@ -252,7 +252,7 @@
                 $(".extracostq_amount").val(sum);
                 $('.extracost_amount').text('₹ ' + sum);
 
-              
+
 
                 var tax_percentage = $( "#tax_percentage option:selected" ).val();
                 if(tax_percentage != '0'){
@@ -307,7 +307,7 @@
                     $('.overall').val(totalq_amount);
                 }
 
-                
+
 
 
                 var overall = $('.overall').val();
@@ -361,7 +361,7 @@
     });
 
     $(document).on("keyup", "input[name*=width]", function() {
-        
+
         var width = $(this).val();
         var height = $(this).parents('tr').find('.height').val();
         var total = height * width;
@@ -447,7 +447,7 @@
                 }
 
 
-                  
+
                 var overall = $('.overall').val();
                 var extracostq_amount = $('.extracostq_amount').val();
 
@@ -545,7 +545,7 @@
         $('.tax_amount').text('₹ ' + tax_amount.toFixed(2));
 
 
-        
+
         var totsl = Number(subq_total) + Number(tax_amount);
         $('.totalq_amount').val(totsl.toFixed(2));
         $('.total_amount').text('₹ ' + totsl.toFixed(2));
@@ -564,7 +564,7 @@
 
 
 
-    
+
 
 
 
@@ -746,9 +746,9 @@
 
 
 
-                
-                
-                
+
+
+
 
                 var overall = $('.overall').val();
                 var billextracostamount = $('.bill_extracost_amount').val();
@@ -785,7 +785,7 @@
                 $('.billextracost_amount').text('₹ ' + sum);
 
 
-                                   
+
 
 
                 var bill_tax_percentage = $( "#bill_tax_percentage option:selected" ).val();
@@ -845,9 +845,9 @@
 
 
 
-                
-                
-                
+
+
+
 
                 var overall = $('.overall').val();
                 var billextracostamount = $('.bill_extracost_amount').val();
@@ -895,7 +895,7 @@
     });
 
     $(document).on("keyup", "input[name*=bill_width]", function() {
-        
+
         var bill_width = $(this).val();
         var bill_height = $(this).parents('tr').find('.bill_height').val();
         var total = bill_height * bill_width;
@@ -906,7 +906,7 @@
 
     });
 
-   
+
 
 
     $("#bill_discount_type").on('change', function() {
@@ -926,7 +926,7 @@
             $('.billdiscount_price').text('₹ ' + 0);
 
 
-           
+
 
             var bill_total_amount = $('.bill_total_amount').val();
             $(".overall").val(bill_total_amount);
@@ -959,7 +959,7 @@
             var overall = Number(bill_total_amount) - Number(bill_discount);
             $('.overall').val(overall);
 
-           
+
             var bill_extracost_amount = $(".bill_extracost_amount").val();
             var bill_grand_total = Number(overall) + Number(bill_extracost_amount);
             $('.bill_grand_total').val(bill_grand_total);
@@ -984,7 +984,7 @@
             $('.overall').val(overall);
 
 
-           
+
             var bill_extracost_amount = $(".bill_extracost_amount").val();
             var bill_grand_total = Number(overall) +  Number(bill_extracost_amount);
             $('.bill_grand_total').val(bill_grand_total.toFixed(2));
@@ -1034,7 +1034,7 @@
                     $('.bill_total_amount').val(totsl.toFixed(2));
                     $('.billtotal_amount').text('₹ ' + totsl.toFixed(2));
 
-                   
+
                     var bill_discount_price = $('.bill_discount_price').val();
                     var overall = Number(totsl) - Number(bill_discount_price);
                     $('.overall').val(overall);
@@ -1072,7 +1072,7 @@
                 $('.billtotal_amount').text('₹ ' + sum);
 
 
-      
+
 
                 var bill_tax_percentage = $( "#bill_tax_percentage option:selected" ).val();
                 if(bill_tax_percentage != '0'){
@@ -1399,7 +1399,7 @@
             var total = purchase_quantity * purchase_rateperquantity;
             $(this).parents('tr').find('.purchase_producttotal').val(total);
 
-            
+
             var sum = 0;
                 $(".purchase_producttotal").each(function(){
                     sum += +$(this).val();
@@ -1471,10 +1471,10 @@
 
 
 
-                
 
 
-               
+
+
                 var overall = $('.overall').val();
                 var purchaseextracostamount = $('.purchase_extracostamount').val();
 
@@ -1483,7 +1483,7 @@
                 $('.purchase_grandtotal').val(grand_total.toFixed(2));
                 $('.purchasegrandtotal').text('₹ ' + grand_total.toFixed(2));
 
-        
+
 
                 $('.purchasebalanceamount').text('₹ ' + grand_total.toFixed(2));
                 $('.purchase_balanceamount').val(grand_total.toFixed(2));
@@ -1580,7 +1580,7 @@
                 var purchase_balanceamount = Number(purchase_grandtotal) - Number(purchase_paidamount);
                 $('.purchase_balanceamount').val(purchase_balanceamount.toFixed(2));
                 $('.purchasebalanceamount').text('₹ ' + purchase_balanceamount.toFixed(2));
-                
+
             }else if(purchase_discounttype == 'none'){
 
                     $('.purchase_discount').val(0);
@@ -1719,10 +1719,10 @@
 
 
 
-                
 
 
-               
+
+
                 var overall = $('.overall').val();
                 var purchaseextracostamount = $('.purchase_extracostamount').val();
 
@@ -1731,7 +1731,7 @@
                 $('.purchase_grandtotal').val(grand_total.toFixed(2));
                 $('.purchasegrandtotal').text('₹ ' + grand_total.toFixed(2));
 
-        
+
 
                 $('.purchasebalanceamount').text('₹ ' + grand_total.toFixed(2));
                 $('.purchase_balanceamount').val(grand_total.toFixed(2));
@@ -1742,7 +1742,7 @@
                 //alert(bill_paid_amount);
                 var purchasebalance_amount = Number(grand_total) - Number(purchase_paidamount);
                 $('.purchase_balanceamount').val(purchasebalance_amount.toFixed(2));
-                $('.purchasebalanceamount').text('₹ ' + purchasebalance_amount.toFixed(2));           
+                $('.purchasebalanceamount').text('₹ ' + purchasebalance_amount.toFixed(2));
 
     });
 

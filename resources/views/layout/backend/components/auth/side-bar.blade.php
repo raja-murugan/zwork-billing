@@ -53,9 +53,9 @@
                 <li class="{{ Route::is('product.index', 'product.create', 'product.store', 'product.edit' ) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}"><i class="fe fe-package"></i> <span>Product</span></a>
                 </li>
-                <li class="{{ Route::is('addon.index', 'addon.create', 'addon.store', 'addon.edit' ) ? 'active' : '' }}">
+                {{-- <li class="{{ Route::is('addon.index', 'addon.create', 'addon.store', 'addon.edit' ) ? 'active' : '' }}">
                     <a href="{{ route('addon.index') }}"><i class="fe fe-book-open"></i> <span>Addon</span></a>
-                </li>
+                </li> --}}
             </ul>
 
 
